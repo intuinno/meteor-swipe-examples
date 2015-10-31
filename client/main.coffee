@@ -1,6 +1,6 @@
 
 # Initialize the Swiper
-@Swiper = new Swipe(['page1', 'page2', 'page3', 'page4', 'page5'])
+@Swiper = new Swipe(['title', 'page1', 'page2', 'page3', 'page4', 'page5'])
 
 Template.main.helpers
   Swiper: -> Swiper
@@ -32,7 +32,7 @@ Swiper.click 'page1', '.pop-up', (e,t) ->
 Template.main.rendered = ->
 
   # starting page
-  Swiper.setInitialPage Router.current().route.getName()
+  Swiper.setInitialPage('page1')
 
   # initially, you cant swipe left. but once you go around the loop, page4 drops
   # off. This tests to see that the animation completes and page4 doesnt disappear
