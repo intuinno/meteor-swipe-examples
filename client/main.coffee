@@ -4,6 +4,20 @@
 
 Template.main.helpers
   Swiper: -> Swiper
+  age: ->
+    Session.get('age')
+
+Template.page4.helpers
+  age: ->
+    Session.get('age')
+
+Template.page5.helpers
+    maleselected: -> if Session.get('gender') == 'male' then 'checked' else ''
+    femaleselected: -> if Session.get('gender') == 'female' then 'checked' else ''
+
+
+
+
 
 # If an element controls swiping, make sure to include the `swipe-control` class.
 # Then to use the control, use `swipeControl`.
@@ -42,14 +56,11 @@ Template.main.rendered = ->
   # sure that the pages wrap around without animating in front of us.
 
 
-  removePage4 = false
+
   Tracker.autorun ->
     if Swiper.pageIs('page1')
       Router.go 'page1'
-      if removePage4
-        Swiper.leftRight('page3', 'page2')
-      else
-        Swiper.leftRight(null, 'page2')
+      Swiper.leftRight(null, 'page2')
 
   Tracker.autorun ->
     if Swiper.pageIs('page2')
@@ -59,19 +70,47 @@ Template.main.rendered = ->
   Tracker.autorun ->
     if Swiper.pageIs('page3')
       Router.go 'page3'
-      if removePage4
-        Swiper.leftRight('page2', 'page1')
-      else
-        Swiper.leftRight('page2', 'page4')
+      Swiper.leftRight('page2', 'page4')
 
   Tracker.autorun ->
     if Swiper.pageIs('page4')
       Router.go 'page4'
-      removePage4 = true
-      Swiper.leftRight('page3', 'page1')
+      Swiper.leftRight('page3', 'page5')
 
   Tracker.autorun ->
     if Swiper.pageIs('page5')
       Router.go 'page5'
-      # you're stuck here. must use a control!
-      Swiper.leftRight(null, null)
+      Swiper.leftRight('page4', 'page6')
+
+Template.main.events({
+  "submit .new-age": (event) ->
+      # Prevent default browser form submit
+      event.preventDefault();
+ 
+      # Get value from form element
+      text = event.target.text.value;
+ 
+      console.log(text);
+      Session.setPersistent('age', text);
+
+  "change #gendermale": (event) ->
+      # Prevent default browser form submit
+      event.preventDefault();
+ 
+      # Get value from form element
+      console.log("male selected")
+      Session.setPersistent('gender', 'male')
+
+  "change #genderfemale": (event) ->
+      # Prevent default browser form submit
+      event.preventDefault();
+ 
+      # Get value from form element
+      console.log("female selected")
+      Session.setPersistent('gender', 'female')
+
+
+
+
+    
+})
