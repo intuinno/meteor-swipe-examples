@@ -1,6 +1,6 @@
 
 # Initialize the Swiper
-@Swiper = new Swipe(['title', 'page1', 'page2', 'page3', 'page4', 'page5','page6'])
+@Swiper = new Swipe(['title', 'page1', 'page2', 'page3', 'page4', 'page5','page6','page7', 'smoking', 'alcohol', 'activity', 'education' ,'stress', 'diabetes1', 'diabetes2', 'heart', 'stroke' , 'firstname', 'result', 'change', 'phone', 'refer', 'thankyou'])
 
 Template.main.helpers
   Swiper: -> Swiper
@@ -19,7 +19,17 @@ Template.page6.helpers
   height: ->
     Session.get('height')
 
+Template.page7.helpers
+  weight: ->
+    Session.get('weight')
 
+Template.result.helpers
+  firstname: ->
+    Session.get('firstname')
+
+Template.firstname.helpers
+  firstname: ->
+    Session.get('firstname')
 
 
 # If an element controls swiping, make sure to include the `swipe-control` class.
@@ -62,6 +72,90 @@ Template.main.rendered = ->
       Router.go 'page6'
       Swiper.leftRight('page5', 'page7')
 
+  Tracker.autorun ->
+    if Swiper.pageIs('page7')
+      Router.go 'page7'
+      Swiper.leftRight('page6', 'smoking')
+
+
+  Tracker.autorun ->
+    if Swiper.pageIs('smoking')
+      Router.go 'smoking'
+      Swiper.leftRight('page7', 'alcohol')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('alcohol')
+      Router.go 'alcohol'
+      Swiper.leftRight('smoking', 'activity')
+
+
+  Tracker.autorun ->
+    if Swiper.pageIs('activity')
+      Router.go 'activity'
+      Swiper.leftRight('alcohol', 'education')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('education')
+      Router.go 'education'
+      Swiper.leftRight('activity', 'stress')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('stress')
+      Router.go 'stress'
+      Swiper.leftRight('activity', 'diabetes1')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('diabetes1')
+      Router.go 'diabetes1'
+      Swiper.leftRight('stress', 'diabetes2')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('diabetes2')
+      Router.go 'diabetes2'
+      Swiper.leftRight('diabetes1', 'heart')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('heart')
+      Router.go 'heart'
+      Swiper.leftRight('diabetes2', 'stroke')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('stroke')
+      Router.go 'stroke'
+      Swiper.leftRight('heart', 'firstname')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('firstname')
+      Router.go 'firstname'
+      Swiper.leftRight('stroke', 'result')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('result')
+      Router.go 'result'
+      Swiper.leftRight('firstname', 'change')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('change')
+      Router.go 'change'
+      Swiper.leftRight('result', 'phone')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('phone')
+      Router.go 'phone'
+      Swiper.leftRight('change', 'refer')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('refer')
+      Router.go 'refer'
+      Swiper.leftRight('change', 'thankyou')
+
+  Tracker.autorun ->
+    if Swiper.pageIs('thankyou')
+      Router.go 'thankyou'
+      Swiper.leftRight('refer', null)
+
+
+
 Template.main.events({
   "submit .new-age": (event) ->
       # Prevent default browser form submit
@@ -98,6 +192,26 @@ Template.main.events({
  
       console.log(text);
       Session.setPersistent('height', text);
+
+  "submit .new-weight": (event) ->
+      # Prevent default browser form submit
+      event.preventDefault();
+ 
+      # Get value from form element
+      text = event.target.weightInput.value;
+ 
+      console.log(text);
+      Session.setPersistent('weight', text);
+
+  "submit .new-name": (event) ->
+      # Prevent default browser form submit
+      event.preventDefault();
+ 
+      # Get value from form element
+      text = event.target.nameInput.value;
+ 
+      console.log(text);
+      Session.setPersistent('firstname', text);
 
 
     

@@ -50,25 +50,18 @@
 <template name="page5">
     <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
         <h3 class="centered header"> What is your gender? </h3>
-        
         <form class="new-gender">
-
-        
-        <div data-toggle="buttons">
-  <label class="btn btn-default btn-lg btn-block {{maleactive}}">
-    <input type="radio" name="gendermale" value="male" id="gendermale" {{malechecked}}> Male
-  </label>
-  <label class="btn btn-default btn-lg btn-block {{femaleactive}}">
-    <input type="radio" name="genderfemale" value="female" id="genderfemale"  {{femalechecked}}> Female
-  </label>
- </div>
-
-      </form>
-    
-    </div> 
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block {{maleactive}}">
+                    <input type="radio" name="gendermale" value="male" id="gendermale" {{malechecked}}> Male
+                </label>
+                <label class="btn btn-default btn-lg btn-block {{femaleactive}}">
+                    <input type="radio" name="genderfemale" value="female" id="genderfemale" {{femalechecked}}> Female
+                </label>
+            </div>
+        </form>
+    </div>
 </template>
-
-
 <template name="page6">
     <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
         <h3 class="centered header"> What is your height in inches? </h3>
@@ -87,35 +80,286 @@
     </h3>
     </div>
 </template>
-
-
-<!-- <template name="page2">
-    page 2
-    <div class="big-right swipe-control">cancel button if swiping</div>
-    <div class="swipe-control custom-transition">this is a special transition to a page that doesnt yet exist!</div>
-</template>
-<template name="page3">
-    <div class="scroll-me scrollable">
-        <input type="text" placeholder="text input">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="checkbox">
-        <input type="radio" name="radio">
-        <input type="radio" name="radio">
-        <input type="radio" name="radio">
-        <input type="radio" name="radio">
-        <textarea placeholder="text area!"></textarea>
-        <div class="swipe-control right-to-page1">skip to page1 -></div>
-        <div class="no-swipe">You cant begin a swipe here!</div>
-        <div class="large-scrollable">
-        </div>
+<template name="page7">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> What is your weight in pound? </h3>
+        <h3 class="centered header"> 
+        <form class="new-weight">
+        <span class="input input--nao">
+          <input class="input__field input__field--nao rightJustified" type="text" name="weightInput" id="input-weight" value="{{weight}}" />
+          <label class="input__label input__label--nao" for="input-height">
+            <span class="input__label-content input__label-content--nao">Weight</span>
+          </label>
+          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+          </svg>
+        </span>
+      </form>
+    </h3>
     </div>
 </template>
-<template name="page4">
-    page 4
+<template name="smoking">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> What is your smoking status? </h3>
+        <form class="new-smoking">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block {{maleactive}}">
+                    <input type="radio" name="gendermale" value="male" id="gendermale" {{malechecked}}> A pack or more a day
+                </label>
+                <label class="btn btn-default btn-lg btn-block {{femaleactive}}">
+                    <input type="radio" name="genderfemale" value="female" id="genderfemale" {{femalechecked}}> Less than a pack a day
+                </label>
+                <label class="btn btn-default btn-lg btn-block {{maleactive}}">
+                    <input type="radio" name="gendermale" value="male" id="gendermale" {{malechecked}}> I don't smoke
+                </label>
+            </div>
+        </form>
+    </div>
 </template>
-<template name="page5">
-    <div class="swipe-control right-to-page1">page1 -></div>
-    <div class="swipe-control left-to-page4"> &lt;- page4</div>
+<template name="alcohol">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> In a typical week, how often do you consume alcoholic beverages?</h3>
+        <form class="new-alcohol">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> 1 or more times a day
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> 3 or 6 times a week
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> 1 or 2 times a week
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> None
+                </label>
+            </div>
+        </form>
+    </div>
 </template>
- -->
+<template name="activity">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> How many hours did you spend doing any type of physical activity in the last week?</h3>
+        <form class="new-activity">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> 0-1 hour
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> 1-2.5 hours
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Greater than 2.5 hours
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="education">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> What is your education level?</h3>
+        <form class="new-activity">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> Less than high school
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> High school graduate
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Post-secondary graduate- Add 3 years
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="stress">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> In the six months, would you say most days have been:</h3>
+        <form class="new-stress">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> At most, a bit stressful
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Very stressful
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="diabetes1">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Have you ever been diagnosed with Type 1 or Type 2 diabetes?</h3>
+        <form class="new-diabetes1">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> Yes
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> No
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Don't know
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="diabetes2">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Have you ever been diagnosed with Type 2 diabetes?</h3>
+        <form class="new-diabetes2">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> Yes
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> No
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Don't know
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="heart">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Have you ever been diagnosed with heart disease?</h3>
+        <form class="new-heart">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> Yes
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> No
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Don't know
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="stroke">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Have you ever experienced a stroke?</h3>
+        <form class="new-stroke">
+            <div data-toggle="buttons">
+                <label class="btn btn-default btn-lg btn-block">
+                    <input type="radio"> Yes
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> No
+                </label>
+                <label class="btn btn-default btn-lg btn-block ">
+                    <input type="radio"> Don't know
+                </label>
+            </div>
+        </form>
+    </div>
+</template>
+<template name="firstname">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> By the way, what is your first name?  </h3>
+        <h3 class="centered header"> 
+        <form class="new-name">
+        <span class="input input--nao">
+          <input class="input__field input__field--nao rightJustified" type="text" name="nameInput" id="input-weight" value="{{firstname}}" />
+          <label class="input__label input__label--nao" for="nameInput">
+            <span class="input__label-content input__label-content--nao">Name</span>
+          </label>
+          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+          </svg>
+        </span>
+      </form>
+    </h3>
+    </div>
+</template>
+<template name="result">
+    <div class="pagecol6 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h1 class="centered header">  {{firstname}}, you will probably live <div class="hit-the-floor"> 23.7 </div>  years more. </h1>
+    </div>
+</template>
+<template name="change">
+    <div class="pagecol6 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <ul>
+            <li>
+                <h3 class="header"> If you quit smoking, you may live <span class="important-number"> 13 </span> years more. 
+        </h3>
+                <form class="new-smoking">
+                    <div class="double">
+                        <input type="checkbox" name="gendermale" value="male" id="gendermale" /> I want to change it.
+                    </div>
+                </form>
+                <br>
+            </li>
+            <li>
+                <h3 class="header"> If you exercise more, you may live <span class="important-number"> 7 </span>  years more. 
+        </h3>
+                <form class="new-smoking">
+                    <div class="double">
+                        <input type="checkbox" name="gendermale" value="male" id="gendermale" /> I want to change it.
+                    </div>
+                </form>
+                <br>
+            </li>
+            <li>
+                <h3 class="header"> If you take well care of diabetes, you may live <span class="important-number"> 3 </span>  years more. 
+        </h3>
+                <form class="new-smoking">
+                    <div class="double">
+                        <input type="checkbox" name="gendermale" value="male" id="gendermale" /> I want a help about it.
+                    </div>
+                </form>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<template name="phone">
+    <div class="pagecol6 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Please enter your phone number if you want us to provide helpful messages.   </h3>
+        <h3 class="centered subheader"> 
+        <form class="new-name">
+        <span class="input input--nao">
+          <input class="input__field input__field--nao rightJustified" type="text" name="weightInput" id="input-weight" value="{{weight}}" />
+          <label class="input__label input__label--nao" for="input-height">
+            <span class="input__label-content input__label-content--nao">phone</span>
+          </label>
+          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+          </svg>
+        </span>
+      </form>
+    </h3>
+    </div>
+</template>
+
+<template name="refer">
+    <div class="pagecol6 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> Did you like this app?  If there is somebody you love, and if you want them to change, too, please enter their phone number below.  They will receive a text message for this app. </h3>
+        <h3 class="centered subheader"> 
+        <form class="new-name">
+        <span class="input input--nao">
+          <input class="input__field input__field--nao rightJustified" type="text" name="weightInput" id="input-weight" value="{{weight}}" />
+          <label class="input__label input__label--nao" for="input-height">
+            <span class="input__label-content input__label-content--nao">phone</span>
+          </label>
+          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+          </svg>
+        </span>
+      </form>
+    </h3>
+    </div>
+</template>
+
+<template name="thankyou">
+    <div class="pagecol3 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h1 class="centered header"> Thank you!  </h1>
+        <h3 class="centered subheader"> This app is brought to you by Terps Care Team at APHA 2015 codeathon. </h3>
+    </div>
+</template>
