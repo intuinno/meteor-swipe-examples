@@ -35,7 +35,7 @@
         <h3 class="centered header"> 
         <form class="new-age">
         <span class="input input--nao">
-          <input class="input__field input__field--nao rightJustified" type="text" name="textname" id="input-1" value="{{age}}" />
+          <input class="input__field input__field--nao rightJustified" type="text" name="ageInput" id="input-1" value="{{age}}" />
           <label class="input__label input__label--nao" for="input-1">
             <span class="input__label-content input__label-content--nao">Age</span>
           </label>
@@ -55,11 +55,11 @@
 
         
         <div data-toggle="buttons">
-  <label class="btn btn-default active btn-lg btn-block">
-    <input type="radio" name="gendermale" value="male" id="gendermale" {{maleselected}}> Male
+  <label class="btn btn-default btn-lg btn-block {{maleactive}}">
+    <input type="radio" name="gendermale" value="male" id="gendermale" {{malechecked}}> Male
   </label>
-  <label class="btn btn-default btn-lg btn-block">
-    <input type="radio" name="genderfemale" value="female" id="genderfemale" {{femaleselected}}> Female
+  <label class="btn btn-default btn-lg btn-block {{femaleactive}}">
+    <input type="radio" name="genderfemale" value="female" id="genderfemale"  {{femalechecked}}> Female
   </label>
  </div>
 
@@ -67,6 +67,28 @@
     
     </div> 
 </template>
+
+
+<template name="page6">
+    <div class="pagecol1 wrapper full-height flexbox column h-center v-center" data-ps="layout">
+        <h3 class="centered header"> What is your height in inches? </h3>
+        <h3 class="centered header"> 
+        <form class="new-height">
+        <span class="input input--nao">
+          <input class="input__field input__field--nao rightJustified" type="text" name="heightInput" id="input-height" value="{{height}}" />
+          <label class="input__label input__label--nao" for="input-height">
+            <span class="input__label-content input__label-content--nao">Height</span>
+          </label>
+          <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+          </svg>
+        </span>
+      </form>
+    </h3>
+    </div>
+</template>
+
+
 <!-- <template name="page2">
     page 2
     <div class="big-right swipe-control">cancel button if swiping</div>

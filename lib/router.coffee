@@ -17,3 +17,8 @@ Router.route 'page4',
 Router.route 'page5',
   template: 'main'
   path: '/page5'
+
+
+Router.route 'page6',
+  template: 'main'
+  path: '/page6'
